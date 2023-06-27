@@ -27,7 +27,7 @@ public class Lista<T> {
             inicio = valor;
         } else {
             Node<T> atual = inicio;
-            for (int i = 0; i < index - 1; i++) {
+            for (int i = 0; i < index - 1; i++) { //o(n)
                 atual = atual.getProximo();
             }
             valor.setProximo(atual.getProximo());
@@ -61,7 +61,7 @@ public class Lista<T> {
         Node<T> anterior = null;
         Node<T> atual = inicio;
 
-        for (int i = 0; i < this.size(); i++) {
+        for (int i = 0; i < this.size(); i++) { 
             if (atual.getElemento().equals(valor)) {
                 if (size == 1) {
                     inicio = null;
@@ -85,9 +85,27 @@ public class Lista<T> {
     }
 
     public void remove(int index) {
-        Node<T> elemento = elementAt(index);
-        remove(elemento.getElemento());
-    }
+       
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Índice inválido");
+        }
+
+        if (size == 1) {
+            inicio = null;
+            ultimo = null;
+        } else if (index == 0) {
+            inicio = inicio.getProximo();
+        } else {
+            Node<T> anterior = elementAt(index - 1);
+            Node<T> atual = anterior.getProximo();
+            anterior.setProximo(atual.getProximo());
+            if (index == size - 1) {
+                ultimo = anterior;
+            }
+        }
+
+        size--;
+    }    
 
     public Node<T> elementAt(int posicao) {
         Node<T> atual = inicio;
