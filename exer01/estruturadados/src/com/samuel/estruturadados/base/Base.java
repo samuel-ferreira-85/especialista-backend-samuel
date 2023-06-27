@@ -20,7 +20,7 @@ public class Base<T> {
 
     protected boolean adiciona(T elemento) {
         this.aumentaCapacidade();
-        if (this.size < this.elementos.length){
+        if (this.size < this.elementos.length) {
             this.elementos[this.size] = elemento;
             this.size++;
             return true;
