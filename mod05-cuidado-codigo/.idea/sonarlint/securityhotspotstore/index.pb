@@ -13,3 +13,5 @@ a
 1src/main/java/com/samuel/exercicio/Fibonacci.java,e\f\ef79d975b6920a2455b11d6e8aad2fac7566727d
 i
 9src/main/tests/com/samuel/exercicios/CalculadoraTest.java,8\9\896335bea35a742485160243e828c910c116db54
+c
+3src/main/java/com/samuel/exercicio/Calculadora.java,d\6\d66a312cfa7c3a9315c53fee2b2b3d8a8fcb0e87
