@@ -1,0 +1,19 @@
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+spring:
+  application:
+    name: gateway-api
+  cloud:
+    gateway:
+      routes:
+        - id: google
+          uri: https://google.com
+          predicates:
+            - Path=/search**
