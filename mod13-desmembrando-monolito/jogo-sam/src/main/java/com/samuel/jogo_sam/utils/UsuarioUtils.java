@@ -30,10 +30,15 @@ public final class UsuarioUtils {
     public static UsuarioDTO novoUsuarioDTOparaUsuarioDTO(NovoUsuarioDTO novoUsuarioDTO) {
         UsuarioDTO usuarioDTO = new UsuarioDTO(null, novoUsuarioDTO.getNome(), novoUsuarioDTO.getLogin(), novoUsuarioDTO.getIdade());
         usuarioDTO.setIdNovoUsuario(novoUsuarioDTO.getId());
+        usuarioDTO.setAlturaCm(novoUsuarioDTO.getAlturaCm());
+
         return usuarioDTO;
     }
 
     public static NovoUsuarioDTO usuarioDTOparaNovoUsuarioDTO(UsuarioDTO usuarioDTO) {
-        return new NovoUsuarioDTO(null, usuarioDTO.getNome(), usuarioDTO.getLogin(), usuarioDTO.getIdade());
+        NovoUsuarioDTO novoUsuarioDTO = new NovoUsuarioDTO(null, usuarioDTO.getNome(), usuarioDTO.getLogin(), usuarioDTO.getIdade());
+        novoUsuarioDTO.setAlturaCm(usuarioDTO.getAlturaCm());
+
+        return novoUsuarioDTO;
     }
 }

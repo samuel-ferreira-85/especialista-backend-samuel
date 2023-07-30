@@ -5,6 +5,8 @@ public class NovoUsuarioDTO {
     private final String nome;
     private final String login;
     private final Integer idade;
+    private Integer alturaCm;
+
 
     public NovoUsuarioDTO(String id, String nome, String login, Integer idade) {
         this.id = id;
@@ -27,5 +29,13 @@ public class NovoUsuarioDTO {
 
     public Integer getIdade() {
         return idade;
+    }
+
+    public Integer getAlturaCm() {
+        return alturaCm;
+    }
+
+    public void setAlturaCm(Integer alturaCm) {
+        this.alturaCm = alturaCm;
     }
 }

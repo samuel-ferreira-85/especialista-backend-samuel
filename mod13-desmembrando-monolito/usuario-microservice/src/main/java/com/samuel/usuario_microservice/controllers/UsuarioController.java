@@ -13,12 +13,12 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @GetMapping
-    public Iterable<Usuario> getAll() {
+    public Iterable<Usuario> encontrarTodos() {
         return usuarioService.listarUsuarios();
     }
 
     @PostMapping
-    public Usuario create(@RequestBody Usuario usuario) {
+    public Usuario criarUsuario(@RequestBody Usuario usuario) {
         return usuarioService.cadastrarUsuario(usuario);
     }
 }

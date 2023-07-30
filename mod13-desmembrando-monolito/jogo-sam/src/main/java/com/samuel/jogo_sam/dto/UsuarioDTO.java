@@ -10,6 +10,7 @@ public class UsuarioDTO implements Serializable {
     private final Integer idade;
 
     private String idNovoUsuario;
+    private Integer alturaCm;
 
     public UsuarioDTO(Long id, String nome, String login, Integer idade) {
         this.id = id;
@@ -40,5 +41,13 @@ public class UsuarioDTO implements Serializable {
 
     public void setIdNovoUsuario(String idNovoUsuario) {
         this.idNovoUsuario = idNovoUsuario;
+    }
+
+    public Integer getAlturaCm() {
+        return alturaCm;
+    }
+
+    public void setAlturaCm(Integer alturaCm) {
+        this.alturaCm = alturaCm;
     }
 }

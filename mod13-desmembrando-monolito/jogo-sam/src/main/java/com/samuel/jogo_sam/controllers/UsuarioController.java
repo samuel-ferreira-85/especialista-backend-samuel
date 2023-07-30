@@ -1,25 +1,34 @@
 package com.samuel.jogo_sam.controllers;
 
 import com.samuel.jogo_sam.dto.UsuarioDTO;
-import com.samuel.jogo_sam.entities.Usuario;
+import com.samuel.jogo_sam.services.NovoUsuarioService;
 import com.samuel.jogo_sam.services.UsuarioService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
-    @Autowired
-    private UsuarioService usuarioService;
+//    private final UsuarioService usuarioService;
+    private final NovoUsuarioService novoUsuarioService;
+
+    public UsuarioController(/*UsuarioService usuarioService, */NovoUsuarioService novoUsuarioService) {
+//        this.usuarioService = usuarioService;
+        this.novoUsuarioService = novoUsuarioService;
+    }
 
     @GetMapping
     public Iterable<UsuarioDTO> encontrarTodos() {
-        return usuarioService.encontrarTodos();
+        return novoUsuarioService.encontrarTodos();
     }
 
     @PostMapping
     public UsuarioDTO criar(@RequestBody UsuarioDTO usuario) {
-        return usuarioService.criarUsuario(usuario);
+        return novoUsuarioService.criarNovoUsuario(usuario);
+
+//        UsuarioDTO novoUsuarioDTOCriado = novoUsuarioService.criarNovoUsuario(usuario);
+//        novoUsuarioService.criarUsuario(usuario);
+
+//        return novoUsuarioDTOCriado;
     }
 }
