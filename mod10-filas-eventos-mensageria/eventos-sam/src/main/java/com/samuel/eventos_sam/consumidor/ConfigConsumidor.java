@@ -1,11 +1,11 @@
 package com.samuel.eventos_sam.consumidor;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.DltHandler;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.annotation.RetryableTopic;
+import org.springframework.stereotype.Component;
 
-@Configuration
+@Component
 public class ConfigConsumidor {
 
     @RetryableTopic(attempts = "2")
